@@ -23,8 +23,8 @@ jobs:
         run: |
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-      # - name: Run Vulture
-      #   run:  "Trainee should add command to run vulture"
+      - name: Run Vulture
+        run:  python -m vulture "formation_indus_ds_avancee/"
       - name: Run tests
         run:  python -m pytest "tests/"
 
