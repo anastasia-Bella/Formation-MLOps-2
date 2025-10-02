@@ -37,4 +37,3 @@ def predict(features: pd.DataFrame, model_path: str) -> pd.DataFrame:
     model = joblib.load(model_path)
     features['predictions'] = model.predict(features)
     return features
-
