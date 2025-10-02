@@ -12,8 +12,7 @@ from formation_indus_ds_avancee.feature_engineering import prepare_features_with
 from formation_indus_ds_avancee.train_and_predict import train_model_with_io
 
 
-@dag(default_args={'owner': 'airflow'}, schedule=timedelta(weeks=4),
-     start_date=pendulum.today('UTC').add(hours=-1))
+@dag(default_args={'owner': 'airflow'}, schedule=timedelta(weeks=4), start_date=pendulum.today('UTC').add(hours=-1))
 def train_model():
     @task
     def prepare_features_task() -> str:
